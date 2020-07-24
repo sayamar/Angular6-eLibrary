@@ -1,0 +1,39 @@
+<h1>Search List</h1>
+
+<!--  <input type="text" placeholder="Search..." #searchInput (input)="onSearch(searchInput.value)"> -->
+<div>
+
+<input type="search"
+               class="form-control" id="message"
+               placeholder="Enter search string"
+               name="search"
+               required  [(ngModel)]="message" />
+      </div>
+      <div>
+      <button type="submit" (click)="doSearch()"
+              class="btn btn-primary">
+        Search
+      </button>
+</div>
+
+<div>
+   <table class="table table-responsive table-striped">  
+      <tr>  
+          <th>Book Id</th>  
+          <th>Book Name</th>  
+          <th>Author</th>  
+          <th>Category</th>  
+          <th>Actions</th>
+          <th></th>
+        </tr> 
+        <ng-container *ngFor = "let item of ebooks">  
+            <tr>  
+              <td>{{item.bookid}}</td>  
+              <td>{{item.bookName}}</td>  
+              <td>{{item.bookAuthor}}</td>  
+              <td>{{item.category}}</td> 
+               <td>{{item.booktype}}</td> 
+            </tr>  
+        </ng-container>  
+   </table>
+  </div>

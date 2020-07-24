@@ -1,0 +1,38 @@
+<!-- <h5>EBOOKS</h5>
+<div *ngFor="let cust of customers">
+  <a [routerLink]="['/customers', cust.id]" style="color:black">
+  <span class="badge badge-dark">{{cust.id}}</span> {{ cust.firstname }}</a>
+</div> -->
+
+<div style="text-align: right ; margin-right: 40px;">  
+ 
+<div>  
+    <table class="table table-responsive table-striped">  
+  
+        <tr>  
+          <th>Id</th>  
+          <th>First Name</th>  
+          <th>Second Name</th>  
+          <th>Age</th>  
+          <th>Email</th>
+          <th></th>
+        </tr> 
+        <ng-container *ngFor = "let cust of customers">  
+            <tr>  
+            <a [routerLink]="['/customers', cust.id]" style="color:black">
+              <td>{{cust.id}}</td>  </a>
+              <td>{{cust.firstname}}</td>  
+              <td>{{cust.lastname}}</td>  
+              <td>{{cust.age}}</td> 
+               <td>{{cust.email}}</td> 
+               
+              
+            </tr>  
+        </ng-container>  
+    
+    
+      </table>  
+</div>  
+</div>
+  
+

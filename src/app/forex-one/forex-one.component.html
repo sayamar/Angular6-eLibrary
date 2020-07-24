@@ -1,0 +1,58 @@
+<head>
+  <title>Simple Currency Converter</title>
+  <link href='https://fonts.googleapis.com/css?family=Quantico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body align="centerbox">
+  <div id="wrapper" class="container">
+
+    <div class="triangle"></div>
+    <br/>
+    <header align="center">
+      <h1><span id="dollarsign" >$</span>imple Currency Converter</h1>
+    </header>
+    <div id="centerbox" class="center" align="center">
+    <section id="fetch">
+      <br/><br/>
+     
+      <input type="text" placeholder="Base Currency (ex. USD)" name="base"
+       [(ngModel)]="base" class="symInput" id="base" />
+      <i class="fa fa-arrow-right" aria-hidden="true"><br/><br/></i>
+     
+      <input type="text" placeholder="Target Currency (ex. EUR)"  name="target"
+      [(ngModel)]="target" class="symInput" id="target" />  
+
+      <br/> <br/> <br/>
+     <button type="submit" (click)="getData()"
+              class="btn btn-primary">
+        Search
+      </button>
+    </section>
+     
+
+    <table class="table table-responsive table-striped">  
+  
+        <tr>  
+          <th>From Currency</th>  
+          <th>To Currency</th>  
+          <th>Conversion</th>  
+         </tr> 
+        <ng-container *ngFor = "let item of forexdet">  
+            <tr>  
+              <td>{{item.baseccy}}</td>  
+              <td>{{item.currency}}</td>  
+              <td>{{item.conversion}}</td>  
+             
+            </tr>  
+        </ng-container>  
+    
+    
+      </table>  
+
+    
+      </div>
+    <div class="triangle2"></div>
+   
+  </div>
+</body>

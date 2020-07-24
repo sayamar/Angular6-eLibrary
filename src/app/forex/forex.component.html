@@ -1,0 +1,27 @@
+<div style="text-align: left ; margin-right: 40px;">  
+  <br/>
+<a routerLink="/forex-one"><button class="btn btn-success pull-right" > Get Conversion</button></a>
+  
+
+    <table class="table table-responsive table-striped">  
+  
+        <tr>  
+          <th>From Currency</th>  
+          <th>To Currency</th>  
+          <th>Conversion</th>  
+         </tr> 
+        <ng-container *ngFor = "let item of forexlist">  
+            <tr>  
+              <td>{{item.baseccy}}</td>  
+              <td>{{item.currency}}</td>  
+              <td>{{item.conversion}}</td>  
+             
+            </tr>  
+        </ng-container>  
+    
+    
+      </table>  
+</div>  
+
+  
+

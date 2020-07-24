@@ -1,0 +1,65 @@
+<h3 align="center">Add Book</h3>
+<div [hidden]="submitted" align="center">
+    <form #addBookForm="ngForm">
+    
+    
+      <div class="form-group">
+        <label for="Book name">Book Name</label>
+        <input type="text" class="form-control" id="bookName" placeholder="Book Name" 
+        required
+        [(ngModel)]="ebook.bookName" name="bookName" #bookName="ngModel">
+        <div [hidden]="bookName.valid || bookName.pristine"
+             class="alert alert-danger">
+            Book Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="bookAuthor">Book Author</label>
+        <input type="text" class="form-control" id="bookAuthor" placeholder="Book Author"
+        required
+        [(ngModel)]="ebook.bookAuthor" name="bookAuthor" #bookAuthor="ngModel">
+        <div [hidden]="bookAuthor.valid || bookAuthor.pristine"
+             class="alert alert-danger">
+            Book Author is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="age">Category</label>
+        <input type="text" class="form-control" id="category" 
+        placeholder="category"
+        required
+        [(ngModel)]="ebook.category" name="category" #category="ngModel">
+        <div [hidden]="category.valid || category.pristine"
+             class="alert alert-danger">
+            Category is required
+        </div>
+      </div>
+      
+       <div class="form-group">
+        <label for="booktype">Book Type</label>
+        <input type="text" class="form-control" id="booktype" 
+        placeholder="Book Type"
+        required
+        [(ngModel)]="ebook.booktype" name="booktype" #booktype="ngModel">
+        <div [hidden]="booktype.valid || booktype.pristine"
+             class="alert alert-danger">
+            Book type required
+        </div>
+      </div>
+      
+      <div class="btn-group btn-group-sm">
+        <button class="btn btn-dark" (click)="goBack()">Back</button>
+        <button class="btn btn-dark" (click)="addBook()" [disabled]="!addBookForm.form.valid">Add</button>
+      </div>
+    </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{ebook.bookid}}  {{ebook.bookName}}</span></p>
+  <div class="btn-group btn-group-sm">
+      <button class="btn btn-dark" (click)="goBack()">Back</button>
+      <button class="btn btn-dark" (click)="newBook(); addBookForm.reset()">Continue</button>
+    </div>
+</div>
